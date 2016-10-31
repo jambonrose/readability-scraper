@@ -1,0 +1,4 @@
+flake8==3.0.4
+ipython==5.1.0
+isort==4.2.5
+Scrapy==1.2.1
