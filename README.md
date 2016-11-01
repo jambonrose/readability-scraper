@@ -52,3 +52,16 @@ and password.
 
     $ # replace USERNAME and PASSWORD in command below
     $ scrapy crawl readability -a username="USERNAME" -a password="PASSWORD" -o links.json
+
+The output of the scraper is JSON, and it maintains the structure it
+finds the links in: 20 links per page. It also notes whether the page
+was a standard page or an archived page.
+
+While this may be desirable to have this format, it is probably more
+desirable to have a flat list of all of the links available. The
+`flatten_link_results.py` script will take JSON output found in a file
+named `links.json` and will output a flat file with a URL on each line,
+named `links.txt`. It assumes the names of these files, and takes no
+arguments, as demonstrated in the code below.
+
+    $ python flatten_link_results.py
